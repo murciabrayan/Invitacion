@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a ver una película</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="post">
+    <h1>¿Quieres ver una película conmigo?</h1>
+    <p>¡Tengo una película genial para ver juntos!</p>
+    <button onclick="window.location.href='confirmacion.html'">Sí</button>
+    <button id="noBtn" onmouseover="moverBoton()">No</button>
+</div>
+    <script>
+        function moverBoton() {
+            const noBtn = document.getElementById('noBtn');
+            const maxWidth = window.innerWidth - noBtn.offsetWidth;
+            const maxHeight = window.innerHeight - noBtn.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxWidth);
+            const randomY = Math.floor(Math.random() * maxHeight);
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
