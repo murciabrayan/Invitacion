@@ -2,24 +2,80 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación a ver una película</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Hola cielo ya aprendí un poco más, ¿qué te parece?</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        /* Estilos específicos para index.html */
+        #container {
+            position: relative; /* Añadir posición relativa para imágenes absolutas */
+            overflow: hidden; /* Ocultar partes de las imágenes que se salen del contenedor */
+        }
+
+        /* Imágenes alrededor del contenedor */
+        #imagenSuperior {
+            position: absolute;
+            top: -100px; /* Ajusta la posición vertical según necesites */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background-image: url('imagenes/luffy.png'); /* Ruta a tu imagen superior */
+            background-size: cover;
+            border-radius: 50%; /* Para hacer la imagen circular si es necesario */
+            z-index: -1; /* Envíe las imágenes detrás del contenido principal */
+        }
+
+        #imagenInferior {
+            position: absolute;
+            bottom: -100px; /* Ajusta la posición vertical según necesites */
+            right: 50%;
+            transform: translateX(50%);
+            width: 200px;
+            height: 200px;
+            background-image: url('imagenes/luffy.png'); /* Ruta a tu imagen inferior */
+            background-size: cover;
+            border-radius: 50%; /* Para hacer la imagen circular si es necesario */
+            z-index: -1; /* Envíe las imágenes detrás del contenido principal */
+        }
+    </style>
 </head>
 <body>
-    <div id="post">
-    <h1>¿Quieres ver una película conmigo?</h1>
-    <p>¡Tengo una película genial para ver juntos!</p>
-    <button onclick="window.location.href='confirmacion.html'">Sí</button>
-    <button id="noBtn" onmouseover="moverBoton()">No</button>
-</div>
+    <div id="container">
+        <div id="cabecera">
+            <img id="logo" src="imagenes/zoro.png" alt="Logo de Hyperblog" />
+            INVITACION PARA TI 
+            <span id="tagline">&lt;3</span>
+        </div>
+        <div id="post">
+            <h1>Hola, Quieres ir al circo?</h1>
+            <p>Aprendi un poco sobre esto</p>
+            <p>Me hizo muy feliz cuando hiciste algo igual</p>
+            <p>No puedes darle que no, pero puedes posponerlo para cuando puedas</p>
+        
+            <!-- Botones de Sí y No -->
+            <div class="botones">
+                <button onclick="window.location.href='confirmacion.html'">Sí</button>
+                <button id="noBtn" onmouseover="moverBoton()">No</button>
+            </div>
+        </div>
+        <div id="footer">
+            Hecho con amor por mi &lt;3
+        </div>
+    </div>
+
+    <!-- Imágenes adicionales fuera del contenedor principal -->
+    <div id="imagenSuperior"></div>
+    <div id="imagenInferior"></div>
+
     <script>
         function moverBoton() {
             const noBtn = document.getElementById('noBtn');
-            const maxWidth = window.innerWidth - noBtn.offsetWidth;
-            const maxHeight = window.innerHeight - noBtn.offsetHeight;
+            const postDiv = document.getElementById('post');
+            const maxWidth = postDiv.clientWidth - noBtn.offsetWidth;
+            const maxHeight = postDiv.clientHeight - noBtn.offsetHeight;
             const randomX = Math.floor(Math.random() * maxWidth);
             const randomY = Math.floor(Math.random() * maxHeight);
+            noBtn.style.position = 'absolute';
             noBtn.style.left = randomX + 'px';
             noBtn.style.top = randomY + 'px';
         }

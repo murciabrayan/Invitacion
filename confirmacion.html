@@ -2,15 +2,63 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmación</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        /* Estilos específicos para confirmacion.html */
+        #container {
+            position: relative; /* Añadir posición relativa para imágenes absolutas */
+            overflow: hidden; /* Ocultar partes de las imágenes que se salen del contenedor */
+        }
+
+        /* Imágenes alrededor del contenedor */
+        #imagenSuperior {
+            position: absolute;
+            top: -100px; /* Ajusta la posición vertical según necesites */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background-image: url('imagenes/luffy.png'); /* Ruta a tu imagen superior */
+            background-size: cover;
+            border-radius: 50%; /* Para hacer la imagen circular si es necesario */
+            z-index: -1; /* Envíe las imágenes detrás del contenido principal */
+        }
+
+        #imagenInferior {
+            position: absolute;
+            bottom: -100px; /* Ajusta la posición vertical según necesites */
+            right: 50%;
+            transform: translateX(50%);
+            width: 200px;
+            height: 200px;
+            background-image: url('imagenes/luffy.png'); /* Ruta a tu imagen inferior */
+            background-size: cover;
+            border-radius: 50%; /* Para hacer la imagen circular si es necesario */
+            z-index: -1; /* Envíe las imágenes detrás del contenido principal */
+        }
+    </style>
 </head>
 <body>
-    <h1>Gracias por aceptar cosita, no es que no se pudieras darle que no</h1>
-    <p>Fecha: Te espero un dia esta semana o la otra antes de que digan que es su ultimo dia. XD</p>
-    <p>Hora: probablemente es por la noche asi que maybe deberias pedir permiso</p>
-    <p>Lugar: Ubate, estancia, Mi querida y acogedora casa te espera si asi lo deseas</p>
+    <div id="container">
+        <div id="cabecera">
+            <img id="logo" src="imagenes/luffy.png" alt="Logo de Hyperblog" />
+            CONFIRMACION
+            <span id="tagline"></span>
+        </div>
+        <div id="post">
+            <h1>Gracias por aceptar cosita, no es que no se pudieras darle que no</h1>
+            <p>Fecha: Te espero un día esta semana o la otra antes de que digan que es su último día. XD</p>
+            <p>Hora: probablemente es por la noche así que maybe deberías pedir permiso</p>
+            <p>Lugar: Ubate, estancia, Mi querida y acogedora casa te espera si así lo deseas</p>
+        </div>
+        <div id="footer">
+            Hecho con amor por mi &lt;3
+        </div>
+    </div>
 
+    <!-- Imágenes adicionales fuera del contenedor principal -->
+    <div id="imagenSuperior"></div>
+    <div id="imagenInferior"></div>
 </body>
 </html>
