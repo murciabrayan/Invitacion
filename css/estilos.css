@@ -25,7 +25,7 @@ body {
 
 #logo {
     width: 200px; /* Corregido: Ancho sin espacio entre valor y unidad */
-    height: 100px;
+    height: 200px;
 }
 
 #tagline {
@@ -84,6 +84,7 @@ button:active {
 }
 
 /* Estilos específicos para imágenes adicionales */
+/* Estilos específicos para index.html y confirmacion.html */
 #imagenSuperior {
     position: absolute;
     top: -100px; /* Ajusta la posición vertical según necesites */
@@ -109,6 +110,58 @@ button:active {
     border-radius: 50%; /* Para hacer la imagen circular si es necesario */
     z-index: -1; /* Envíe las imágenes detrás del contenido principal */
 }
+
+/* Nuevas imágenes adicionales */
+#imagenIzquierda {
+    position: absolute;
+    top: 50%;
+    left: -100px; /* Ajusta la posición horizontal según necesites */
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    background-image: url('imagenes/luffy.png'); /* Ruta a tu imagen izquierda */
+    background-size: cover;
+    border-radius: 50%; /* Para hacer la imagen circular si es necesario */
+    z-index: -1; /* Envíe las imágenes detrás del contenido principal */
+}
+
+#imagenDerecha {
+    position: absolute;
+    top: 50%;
+    right: -100px; /* Ajusta la posición horizontal según necesites */
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    background-image: url('imagenes/zoro.png'); /* Ruta a tu imagen derecha */
+    background-size: cover;
+    border-radius: 50%; /* Para hacer la imagen circular si es necesario */
+    z-index: -1; /* Envíe las imágenes detrás del contenido principal */
+}
+
+#imagenDiagonalSuperiorIzquierda {
+    position: absolute;
+    top: -100px; /* Ajusta la posición vertical según necesites */
+    left: -100px; /* Ajusta la posición horizontal según necesites */
+    width: 200px;
+    height: 200px;
+    background-image: url('imagenes/zoro.png'); /* Ruta a tu imagen diagonal superior izquierda */
+    background-size: cover;
+    border-radius: 50%; /* Para hacer la imagen circular si es necesario */
+    z-index: -1; /* Envíe las imágenes detrás del contenido principal */
+}
+
+#imagenDiagonalInferiorDerecha {
+    position: absolute;
+    bottom: -100px; /* Ajusta la posición vertical según necesites */
+    right: -100px; /* Ajusta la posición horizontal según necesites */
+    width: 200px;
+    height: 200px;
+    background-image: url('imagenes/luffy.png'); /* Ruta a tu imagen diagonal inferior derecha */
+    background-size: cover;
+    border-radius: 50%; /* Para hacer la imagen circular si es necesario */
+    z-index: -1; /* Envíe las imágenes detrás del contenido principal */
+}
+
 
 /* Otros estilos generales */
 /* Ajusta según necesidades específicas de tu diseño */
